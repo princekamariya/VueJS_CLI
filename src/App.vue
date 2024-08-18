@@ -34,7 +34,7 @@ export default {
     </div>
     <br />
 
-    <div v-if="showModal">
+    <teleport to="#modals" v-if="showModal">
         <Modal :header="header" :text="text" theme="sale" @close="toggleModal">
             <template v-slot:links>
                 <a href="#">sign up now</a>
@@ -43,7 +43,7 @@ export default {
             <h1>Ninja Giveaway!</h1>
             <p>Grab your ninja swag for half price!</p>
         </Modal>
-    </div>
+    </teleport>
     <div v-if="showModalTwo">
         <Modal theme="sale" @close="toggleModalTwo">
             <h1>Sign up today!</h1>

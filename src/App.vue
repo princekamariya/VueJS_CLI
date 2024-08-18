@@ -8,6 +8,7 @@ export default {
             title: "First Vue App",
             header: "Sign up for the Giveways",
             text: "Grab your ninja swag for half price",
+            showModal: false,
         };
     },
     methods: {
@@ -15,6 +16,9 @@ export default {
             console.log(this.$refs.name);
             this.$refs.name.classList.add("active");
             this.$refs.name.focus();
+        },
+        toggleModal() {
+            this.showModal = !this.showModal;
         },
     },
 };
@@ -27,7 +31,15 @@ export default {
         <input type="text" ref="name" />
         <button @click="handleClick">click me</button>
     </div>
-    <Modal :header="header" :text="text" theme="sale" />
+    <div v-if="showModal">
+        <Modal
+            :header="header"
+            :text="text"
+            theme="sale"
+            @close="toggleModal"
+        />
+    </div>
+    <button @click="toggleModal">open modal</button>
 </template>
 
 <style>

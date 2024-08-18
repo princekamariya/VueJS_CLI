@@ -9,6 +9,7 @@ export default {
             header: "Sign up for the Giveways",
             text: "Grab your ninja swag for half price",
             showModal: false,
+            showModalTwo: false,
         };
     },
     methods: {
@@ -19,6 +20,9 @@ export default {
         },
         toggleModal() {
             this.showModal = !this.showModal;
+        },
+        toggleModalTwo() {
+            this.showModalTwo = !this.showModalTwo;
         },
     },
 };
@@ -40,8 +44,15 @@ export default {
             <p>Grab your ninja swag for half price!</p>
         </Modal>
     </div>
+    <div v-if="showModalTwo">
+        <Modal theme="sale" @close="toggleModalTwo">
+            <h1>Sign up today!</h1>
+            <p>Grab swag for half price!</p>
+        </Modal>
+    </div>
     <br />
-    <button @click.alt="toggleModal">open modal (alt)</button>
+    <button @click.alt="toggleModal">open modal (alt)</button> <br />
+    <button @click="toggleModalTwo">open modal</button>
 </template>
 
 <style>

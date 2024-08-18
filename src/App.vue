@@ -25,7 +25,7 @@ export default {
         <input type="text" ref="name" />
         <button @click="handleClick">click me</button>
     </div>
-    <Modal />
+    <Modal header="Sign up for the Giveaway!" text="Grab your ninja swag for half price!  "/>
 </template>
 
 <style>

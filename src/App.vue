@@ -6,6 +6,8 @@ export default {
     data() {
         return {
             title: "First Vue App",
+            header: "Sign up for the Giveways",
+            text: "Grab your ninja swag for half price",
         };
     },
     methods: {
@@ -25,7 +27,7 @@ export default {
         <input type="text" ref="name" />
         <button @click="handleClick">click me</button>
     </div>
-    <Modal header="Sign up for the Giveaway!" text="Grab your ninja swag for half price!  "/>
+    <Modal :header="header" :text="text" theme="sale" />
 </template>
 
 <style>

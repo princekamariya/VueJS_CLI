@@ -27,19 +27,14 @@ export default {
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <br />
-        <input type="text" ref="name" />
-        <button @click="handleClick">click me</button>
     </div>
     <br />
 
     <div v-if="showModal">
-        <Modal
-            :header="header"
-            :text="text"
-            theme="sale"
-            @close="toggleModal"
-        />
+        <Modal :header="header" :text="text" theme="sale" @close="toggleModal">
+            <h1>Ninja Giveaway!</h1>
+            <p>Grab your ninja swag for half price!</p>
+        </Modal>
     </div>
     <br />
     <button @click.alt="toggleModal">open modal (alt)</button>

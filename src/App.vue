@@ -31,6 +31,8 @@ export default {
         <input type="text" ref="name" />
         <button @click="handleClick">click me</button>
     </div>
+    <br />
+
     <div v-if="showModal">
         <Modal
             :header="header"
@@ -39,7 +41,8 @@ export default {
             @close="toggleModal"
         />
     </div>
-    <button @click="toggleModal">open modal</button>
+    <br />
+    <button @click.alt="toggleModal">open modal (alt)</button>
 </template>
 
 <style>
